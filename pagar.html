@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+    <main>
+        <div id="pago">
+            <div class="pago__monto">
+                <h2 id="precioAPagar"></h2>
+                <ul class="agregarPelicula"></ul>
+            </div>
+            <div class="pago__tarjeta">
+                <h2>Ingrese los datos de tu tarjeta</h2>
+                <form class="form_tarjeta">
+                    <input type="text" name="numeroTarjeta" placeholder="Número de tarjeta (16 digitos)" required>
+                    <input type="text" name="nombreTarjeta" placeholder="Nombre de tarjeta" required>
+                    <input type="date" name="fechaTarjeta" placeholder="Fecha de vencimiento" required>
+                    <input type="number" name="ccvTarjeta" placeholder="CCV" required>
+                    <input type="submit" class="btn" value="Pagar">
+                </form>
+            </div>
+        </div>
+        <div class="compraPendiente">
+            <h2>Gracias por su compra y disfrute sus peliculas</h2>
+        </div>
+    </main>
+    
+
+<script src="js/pagar.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Recomendacion de la libreria, de poner este script en el head -->
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <!-- -------- -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+    <header>
+        <div class="sombraTop"></div>
+        
+        <nav class="navegacion">
+            <a href="#">Inicio</a>
+            <a href="#"><p class="logo">PeliS</p></a>
+            <a href="#">Agregar Pelicula</a>
+        </nav>
+        <div>
+            <video id="video" src="img/videocabecera.mp4" autoplay loop muted></video>
+            <div class="sombreado"></div>
+        </div>
+        <div class="sonido">
+            <ion-icon name="volume-mute" class="sonidoIcon"></ion-icon>
+        </div>
+        <div class="presentacion">
+            <h2 class="titulo">Compra y mirá</h2>
+            <p>El catálogo mas completo de toda la web online</p>
+        </div>
+    </header>
+    <main id="main">
+        <form id="buscarPelicula">
+            <select name="genero" id="genero">
+                <option value="" selected disabled>Seleccione un género</option>
+                <option value="Acción">Acción</option>
+                <option value="Drama">Drama</option>
+                <option value="Infantil">Infantil</option>
+                <option value="Terror">Terror</option>
+                <option value="Ficción">Ficción</option>
+                <option value="Comedia">Comedia</option>
+                <option value="Aventura">Aventura</option>
+            </select>
+            <input type="submit" class="btn" value="Buscar">
+        </form>
+        <section class="catalogo">
+            <h2>Catálogo</h2>
+            <div class="pelicula"></div>
+        </section>
+        <div class="kart">
+            <svg class="w-6 h-6 color-kart" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            <div class="kart-number">
+                <p class="number"></p>
+            </div>
+        </div>
+        <div class="temaCarrito">
+            <div id="fondo"></div>
+            <div class="listaCarrito">
+                <ul></ul>
+                <div class="precioLista">
+                    <p>Total <span>(+IVA 21%)</span></p>
+                    <p id="precio"></p>
+                </div>
+                <div class="grupoBtn">
+                    <button class="btn btn--pagar"><a href="/pagar.html">Comprar</a></button>
+                </div>
+            </div>
+        </div>    
+        <div class="alerta"></div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

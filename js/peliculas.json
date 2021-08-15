@@ -1,0 +1,159 @@
+[
+    {
+        "nombre": "Black Widow",
+        "year": 2021,
+        "minutos": 134,
+        "genero": "Acción",
+        "genero2": "Aventura",
+        "precio": 1500,
+        "img": "../img/catalogo/blueb_007d_g_spa-ar_70x100_43a5cf52.webp",
+        "id": 1
+    },
+    {
+        "nombre": "Un jefe en pañales",
+        "year": 2017,
+        "minutos": 97,
+        "genero": "Infantil",
+        "genero2": "Comedia",
+        "precio": 700,
+        "img": "../img/catalogo/jefeen.jpg",
+        "id": 2 
+    },
+    {
+        "nombre": "El conjuro",
+        "year": 2013,
+        "minutos": 112,
+        "genero": "Terror",
+        "genero2": "Suspenso",
+        "precio": 250,
+        "img": "../img/catalogo/ElConjuroPoster.webp", 
+        "id": 3
+    },
+    {
+        "nombre": "Kong",
+        "year": 2017,
+        "minutos": 120,
+        "genero": "Acción",
+        "genero2": "Aventura",
+        "precio": 700,
+        "img": "../img/catalogo/644551_p.jpg",
+        "id": 4 
+    },
+    {
+        "nombre": "El renacido",
+        "year": 2015,
+        "minutos": 156,
+        "genero": "Aventura",
+        "precio": 500,
+        "img": "../img/catalogo/renacido.jpg",
+        "id": 5 
+    },
+    {
+        "nombre": "Liga de la justicia",
+        "year": 2021,
+        "minutos": 242,
+        "genero": "Acción",
+        "genero2": "Aventura",
+        "precio": 1500,
+        "img": "../img/catalogo/ligaJusticia.jpg",
+        "id": 6
+    },
+    {
+        "nombre": "Mad Max",
+        "year": 2015,
+        "minutos": 120,
+        "genero": "Ficción",
+        "genero2": "Acción",
+        "precio": 300,
+        "img": "../img/catalogo/madMax.webp",
+        "id": 7 
+    },
+    {
+        "nombre": "Godzilla vs Kong",
+        "year": 2021,
+        "minutos": 113,
+        "genero": "Ficción",
+        "genero2": "Acción",
+        "precio": 1500,
+        "img": "../img/catalogo/godzillavskong.webp",
+        "id": 8
+    },
+    {
+        "nombre": "Mortal Kombat",
+        "year": 2021,
+        "minutos": 110,
+        "genero": "Acción",
+        "genero2": "Fantasía",
+        "precio": 1500,
+        "img": "../img/catalogo/mortalkombat.webp",
+        "id": 9
+    },
+    {
+        "nombre": "Rapido y furiosos 9",
+        "year": 2021,
+        "minutos": 145,
+        "genero": "Acción",
+        "genero2": "Aventura",
+        "precio": 1500,
+        "img": "../img/catalogo/rapidoyfurioso.webp",
+        "id": 10
+    },
+    {
+        "nombre": "Cruella",
+        "year": 2021,
+        "minutos": 134,
+        "genero": "Comedia",
+        "genero2": "Crimen",
+        "precio": 1500,
+        "img": "../img/catalogo/cruella.jpg",
+        "id": 11 
+    },
+    {
+        "nombre": "Escuadron Suicida 2",
+        "year": 2021,
+        "minutos": 133,
+        "genero": "Acción",
+        "genero2": "Aventura",
+        "precio": 1500,
+        "img": "../img/catalogo/escuadron.jpg",
+        "id": 12
+    },
+    {
+        "nombre": "Moonlight",
+        "year": 2016,
+        "minutos": 111,
+        "genero": "Drama",
+        "precio": 600,
+        "img": "../img/catalogo/moonlight.jpg",
+        "id": 13 
+    },
+    {
+        "nombre": "Harry Potter y la reliquias de la muerte. Pt2",
+        "year": 2011,
+        "minutos": 130,
+        "genero": "Fantasía",
+        "precio": 1000,
+        "img": "../img/catalogo/harry-potter.webp",
+        "id": 14 
+    },
+    {
+        "nombre": "Tranformers 3",
+        "year": 2011,
+        "minutos": 157,
+        "genero": "Acción",
+        "genero2": "Ficción",
+        "precio": 600,
+        "img": "../img/catalogo/transformers.webp",
+        "id": 15 
+    },
+    {
+        "nombre": "Piratas del Caribe 2",
+        "year": 2006,
+        "minutos": 151,
+        "genero": "Acción",
+        "genero2": "Aventura",
+        "precio": 300,
+        "img": "../img/catalogo/piratas-del-caribe.jpg",
+        "id": 16 
+    }
+]

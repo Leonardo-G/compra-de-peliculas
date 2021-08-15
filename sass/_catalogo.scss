@@ -1,0 +1,325 @@
+/*Catalogo*/
+
+.catalogo{
+    margin: 5rem auto;
+    width: min(90%, 130rem);
+    h2{
+        margin: 5rem;
+    }
+}
+
+//Buscador
+#buscarPelicula{
+    width: min(90%, 130rem);
+    margin: 5rem auto;
+}
+
+//BOTON
+
+.btn, select{
+    border: 1px solid #707070;
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: #332532;
+    color: #fff;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #5f525e;
+}
+
+.pelicula{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10rem;
+    row-gap: 10rem;
+    position: relative;
+    .descripcion{
+        position: relative;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 0;
+        display: flex;
+        justify-content: space-around;
+        &:before{
+            content: "";
+            width: 100%;
+            height: 13rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(to bottom, transparent 30%,rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 1) 100%);
+            z-index: -1;
+        }
+        .minutos{
+            margin: auto 0;
+        }
+    }
+    h3, .descripcion__year, .minutos p{
+        font-size: 2rem;
+        color: #A49A87;
+        font-weight: 700;
+    }
+    .pelicula__seccion, .hover, .bloque{
+        height: 60rem;
+        position: relative;
+    }
+    .pelicula__seccion:hover .hover{
+        opacity: 1;
+    }
+    .hover{
+        background-color: #644d52bd;
+        z-index: 0;
+        position: relative;
+        transition: all 0.2s ease;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        &::before{
+            content: "";
+            width: 100%;
+            height: 20rem;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(to bottom, transparent 30%,rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 1) 100%);
+            z-index: -1;
+        }
+        .hover__fondo{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem 5rem 2rem;
+            .fondoTitulo{
+                font-size: 5rem;
+                font-family: 'Encode Sans SC', sans-serif;
+            }
+        }
+        .hover__descripcion{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+            width: 100%;
+            padding: 2rem;
+            .precio{
+                font-size: 2.5rem;
+                margin: 1rem;
+                color: #A49A87;
+                font-weight: 700;
+            }
+        }   
+    }
+}
+
+.pelicula__seccion, .hover, .bloque{
+    height: 60rem;
+    position: relative;
+}
+
+.kart{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: #332532;
+    position: relative;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    .color-kart{
+        color: #fff;
+        width: 7rem;
+        height: 7rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        
+    }
+    .kart-number{
+        position: relative;
+        position: absolute;
+        right: inherit;
+        background-color: #A49A87;
+        padding: 1.3rem;
+        border-radius: 50%;
+        .number{
+            font-size: 2rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.listaCarrito{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #181515;
+    height: 100%;
+    width: 60rem;
+    visibility: hidden;
+    position: fixed;
+    z-index: 999;
+    opacity: 0;
+    transform: translate(100%);
+    overflow-y: scroll;
+    transition: all 0.2s ease-in;
+    p{
+        font-size: 3rem;
+    }
+    .listaCarrito__pelicula{
+        display: grid;
+        grid-template-columns: 1fr 2fr 0.5fr 0.1fr;
+        height: 18rem;
+        align-items: center;
+        text-align: center;
+        column-gap: 2rem;
+        padding: 2rem;
+        margin-top: 2rem;
+        border-bottom: 1px solid #a7a7a780;
+        width: 90%;
+        margin: 2rem auto 0 auto;
+        &:last-of-type{
+            border-bottom: none
+        }
+        .precioCarrito{
+            font-size: 2rem;
+            color: #A49A87;
+        }
+    }
+    .precioLista{
+        display: flex;
+        justify-content: space-around;
+        margin: 2rem 0;
+        p{
+            font-size: 2.5rem;
+        }
+        span{
+            font-size: 1.6rem;
+            color: #c1c1c1;
+        }
+    }
+}
+
+.aparicion{
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0%);
+    transition: all 0.2s ease-in;
+}
+
+.alerta{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 35rem;
+    height: 8rem;
+    background-color: #51be72;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: .2s;
+    z-index: 9999;
+    .icon-check{
+        color: #fff;
+        width: 2rem;
+        height: 2rem;
+    }
+    p{
+        font-size: 1.8rem;
+    }
+}
+
+.agregado{
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.fondoCarrito{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(164, 154, 135, 0.534);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    transition: all 0.2s ease-in;
+    cursor: url(../img/marca-x.png), pointer;
+}
+
+.eliminarPelicula{
+    width: 3rem;
+    height: 3rem;
+    color: #fff;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.listaCarrito__pelicula:hover .eliminarPelicula{
+    visibility: visible;
+}
+
+.grupoBtn{
+    width: 100%;
+    display:flex;
+    .btn--pagar{
+        margin: 0 auto;
+    }
+}
+
+@media (max-width:1200px) {
+    .pelicula{
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        column-gap: 2rem;
+        row-gap: 3rem;
+        .pelicula__seccion, .hover, .bloque{
+            height: 40rem;
+            visibility: visible;
+            opacity: 1;
+        }
+        .hover .hover__fondo {
+            padding: 0 1rem 5rem 1rem;
+            .fondoTitulo{
+                font-size: 3rem
+            }
+        }
+        .descripcion{
+            top: 0;
+            z-index: 9;
+            height: 20%;
+            align-items: center;
+            &::after, &:before{
+                visibility: hidden;
+            }
+            .descripcion__year, .minutos p{
+                color: #e1e1e1b4;
+                font-size: 1.6rem;
+            }
+            .tituloBloque{
+                display: none;
+            }
+        }
+    }
+    .btn, select{
+        font-size:1.6rem;
+        padding: 0.5rem 1rem;
+    }
+}

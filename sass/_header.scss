@@ -1,0 +1,70 @@
+/*Header*/
+.navegacion{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+    margin-top: 3rem;
+    .logo{
+        font-size: 5rem;
+        font-family: 'Encode Sans SC', sans-serif;
+        color: #774E4E;
+        font-weight: 600;
+    }
+    a{
+        padding: 1rem 2rem;
+    }
+}
+
+.presentacion{
+    position: absolute;
+    left: 5%;
+    bottom: 15%;
+    .titulo{
+        font-size: 6rem;
+        padding: 2rem 0;
+    }
+    p{
+        font-size: 3rem;
+        color: #FF974F;
+    }
+}
+
+.sombraTop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    background-image: linear-gradient(to top, transparent 30%,rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 1) 90%);
+    z-index: 1;
+}
+
+.sombreado{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, transparent 85%,rgba(0, 0, 0, 0.5) 90%, rgba(0, 0, 0, 1) 100%);
+}
+
+.sonido{
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    cursor: pointer;
+    padding: 2rem;
+    .sonidoIcon{
+        width: 3rem;
+        height: 3rem;
+        color: #c1c1c18c;
+    }
+    &:hover .sonidoIcon{
+        color: #fff;
+    }
+}
