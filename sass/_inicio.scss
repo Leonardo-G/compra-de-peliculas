@@ -1,0 +1,119 @@
+.imgPortada{
+    height: 100vh;
+}
+
+//Transiciones
+.oculto{
+    transform: translateY(200%);
+    transition: 1s;
+}
+
+.imgNosotros{
+    transform: translateY(200%);
+    transition: 1s;
+}
+
+.contenedorAncho{
+    margin: 10rem auto;
+    width: 120rem;
+    max-width: 90%;
+}
+
+.nosotros{
+    display: grid;
+    grid-template-columns: 0.60fr 1fr;
+    align-items: center;
+    column-gap: 5rem;
+    p{
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+
+.seccion2{
+    display: grid;
+    grid-template-columns: 1fr 0.50fr;
+    .seccion2__imagenes{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        height: 70rem;
+        transition: 1s;
+    }
+    .animation1, .animation2, .animation3, .animation4{
+        transform: translateY(100%);
+    }
+    .animation1{
+        transition: 0.6s;
+    }
+    .animation2{
+        transition: 0.9s;
+    }
+    .animation3{
+        transition: 1.2s;
+    }
+    .animation4{
+        transition: 1.5s;
+    }
+    img{
+        width: 100%;
+        background-size: cover;
+        object-fit: cover;
+        object-position: center center;
+    }
+    .seccion2__texto{
+        background-color: #f0ad4e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+            padding: 3rem;
+            font-size: 1.6rem;
+            line-height: 2.5rem;
+            color: #fff;
+            font-family: "Encode Sans SC", sans-serif;
+            font-weight: 400;
+        }
+    }
+}
+
+.seccion3{
+    position: relative;
+    .textoSeccion{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: 9;
+    }
+    .fondo{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-right: 40rem solid transparent;
+        border-top: 40rem solid transparent;
+        border-left: 40rem solid transparent;
+        border-bottom: 40rem solid #fff;
+        transform: rotate(90deg);
+        z-index: 9;
+    }
+    p{
+        padding: 1rem;
+        width: 40rem;
+        font-size: 3rem;
+        line-height: 2.5rem;
+        color: #000;
+        font-family: "Encode Sans SC", sans-serif;
+        font-weight: 600;
+    }
+    .btn--inicio{
+        margin-left: 5rem;
+    }
+    video{
+        height: 80rem;
+        background-size: cover;
+        object-fit: cover;
+        object-position: center center;
+    }
+}

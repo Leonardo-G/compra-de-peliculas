@@ -14,10 +14,11 @@ const catalogoSeccion = document.querySelector(".pelicula");
 const video = document.querySelector("video");
 const sonido = document.querySelector(".sonido");
 
-//variables de Carrito
+//variables de la lista del Carrito
 const iconoKart = document.querySelector(".kart");
 const number = document.querySelector(".number");
 const carritoOpen = document.querySelector(".listaCarrito");
+const cerrarLista = document.querySelector(".cerrarLista");
 const fondo = document.querySelector("#fondo");
 const lista = document.querySelector(".listaCarrito ul");
 let precioCarrito = document.querySelector(".precioLista #precio");
@@ -249,7 +250,11 @@ function notificacion(mensaje, tipo){
 function aparecerLista(){
     fondo.classList.toggle("fondoCarrito");
     carritoOpen.classList.toggle("aparicion");
-    fondo.onclick = () =>{
+    fondo.onclick = () => {
+        fondo.classList.toggle("fondoCarrito");
+        carritoOpen.classList.toggle("aparicion");
+    }
+    cerrarLista.onclick = () => {
         fondo.classList.toggle("fondoCarrito");
         carritoOpen.classList.toggle("aparicion");
     }

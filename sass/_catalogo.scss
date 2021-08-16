@@ -12,6 +12,11 @@
 #buscarPelicula{
     width: min(90%, 130rem);
     margin: 5rem auto;
+    label{
+        font-size: 2rem;
+        color: #fff;
+        padding: 0 2rem;
+    }
 }
 
 //BOTON
@@ -134,6 +139,7 @@
     right: 5%;
     bottom: 5%;
     position: fixed;
+    z-index: 999;
     visibility: hidden;
     opacity: 0;
     .color-kart{
@@ -177,6 +183,17 @@
     transform: translate(100%);
     overflow-y: scroll;
     transition: all 0.2s ease-in;
+    .cerrarLista{
+        background-color: #fff;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        color: #000;
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        cursor: pointer;
+    }
     p{
         font-size: 3rem;
     }
@@ -191,7 +208,7 @@
         margin-top: 2rem;
         border-bottom: 1px solid #a7a7a780;
         width: 90%;
-        margin: 2rem auto 0 auto;
+        margin: 4rem auto 0 auto;
         &:last-of-type{
             border-bottom: none
         }
@@ -321,5 +338,15 @@
     .btn, select{
         font-size:1.6rem;
         padding: 0.5rem 1rem;
+    }
+
+    .eliminarPelicula{
+        visibility: visible;
+    }
+}
+
+@media (max-width: 720px) {
+    .listaCarrito{
+        width: 100%;
     }
 }

@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Recomendacion de la libreria, de poner este script en el head -->
     <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
     <!-- -------- -->
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -21,9 +20,9 @@
         <div class="sombraTop"></div>
         
         <nav class="navegacion">
-            <a href="#">Inicio</a>
-            <a href="#"><p class="logo">PeliS</p></a>
-            <a href="#">Agregar Pelicula</a>
+            <a href="./pages/inicio.html">Inicio</a>
+            <a href="./pages/inicio.html"><p class="logo">PeliS</p></a>
+            <a href="#">Subscribirse</a>
         </nav>
         <div>
             <video id="video" src="img/videocabecera.mp4" autoplay loop muted></video>
@@ -39,6 +38,7 @@
     </header>
     <main id="main">
         <form id="buscarPelicula">
+            <label>Buscar pelicula</label>
             <select name="genero" id="genero">
                 <option value="" selected disabled>Seleccione un género</option>
                 <option value="Acción">Acción</option>
@@ -49,7 +49,7 @@
                 <option value="Comedia">Comedia</option>
                 <option value="Aventura">Aventura</option>
             </select>
-            <input type="submit" class="btn" value="Buscar">
+            <!-- <input type="submit" class="btn" value="Buscar"> -->
         </form>
         <section class="catalogo">
             <h2>Catálogo</h2>
@@ -64,6 +64,7 @@
         <div class="temaCarrito">
             <div id="fondo"></div>
             <div class="listaCarrito">
+                <ion-icon name="close" class="cerrarLista"></ion-icon>
                 <ul></ul>
                 <div class="precioLista">
                     <p>Total <span>(+IVA 21%)</span></p>

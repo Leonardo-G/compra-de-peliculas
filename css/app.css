@@ -136,6 +136,11 @@ img {
   width: min(90%, 130rem);
   margin: 5rem auto;
 }
+#buscarPelicula label {
+  font-size: 2rem;
+  color: #fff;
+  padding: 0 2rem;
+}
 
 .btn, select {
   border: 1px solid #707070;
@@ -256,6 +261,7 @@ img {
   right: 5%;
   bottom: 5%;
   position: fixed;
+  z-index: 999;
   visibility: hidden;
   opacity: 0;
 }
@@ -299,6 +305,17 @@ img {
   overflow-y: scroll;
   transition: all 0.2s ease-in;
 }
+.listaCarrito .cerrarLista {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  color: #000;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  cursor: pointer;
+}
 .listaCarrito p {
   font-size: 3rem;
 }
@@ -313,7 +330,7 @@ img {
   margin-top: 2rem;
   border-bottom: 1px solid #a7a7a780;
   width: 90%;
-  margin: 2rem auto 0 auto;
+  margin: 4rem auto 0 auto;
 }
 .listaCarrito .listaCarrito__pelicula:last-of-type {
   border-bottom: none;
@@ -443,6 +460,15 @@ img {
   .btn, select {
     font-size: 1.6rem;
     padding: 0.5rem 1rem;
+  }
+
+  .eliminarPelicula {
+    visibility: visible;
+  }
+}
+@media (max-width: 720px) {
+  .listaCarrito {
+    width: 100%;
   }
 }
 #pago {
@@ -634,4 +660,122 @@ img {
     transform: perspective(140px) rotateY(180deg);
     opacity: 0;
   }
+}
+.imgPortada {
+  height: 100vh;
+}
+
+.oculto {
+  transform: translateY(200%);
+  transition: 1s;
+}
+
+.imgNosotros {
+  transform: translateY(200%);
+  transition: 1s;
+}
+
+.contenedorAncho {
+  margin: 10rem auto;
+  width: 120rem;
+  max-width: 90%;
+}
+
+.nosotros {
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+  align-items: center;
+  column-gap: 5rem;
+}
+.nosotros p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+.seccion2 {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+}
+.seccion2 .seccion2__imagenes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 70rem;
+  transition: 1s;
+}
+.seccion2 .animation1, .seccion2 .animation2, .seccion2 .animation3, .seccion2 .animation4 {
+  transform: translateY(100%);
+}
+.seccion2 .animation1 {
+  transition: 0.6s;
+}
+.seccion2 .animation2 {
+  transition: 0.9s;
+}
+.seccion2 .animation3 {
+  transition: 1.2s;
+}
+.seccion2 .animation4 {
+  transition: 1.5s;
+}
+.seccion2 img {
+  width: 100%;
+  background-size: cover;
+  object-fit: cover;
+  object-position: center center;
+}
+.seccion2 .seccion2__texto {
+  background-color: #f0ad4e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.seccion2 .seccion2__texto p {
+  padding: 3rem;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  color: #fff;
+  font-family: "Encode Sans SC", sans-serif;
+  font-weight: 400;
+}
+
+.seccion3 {
+  position: relative;
+}
+.seccion3 .textoSeccion {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 9;
+}
+.seccion3 .fondo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-right: 40rem solid transparent;
+  border-top: 40rem solid transparent;
+  border-left: 40rem solid transparent;
+  border-bottom: 40rem solid #fff;
+  transform: rotate(90deg);
+  z-index: 9;
+}
+.seccion3 p {
+  padding: 1rem;
+  width: 40rem;
+  font-size: 3rem;
+  line-height: 2.5rem;
+  color: #000;
+  font-family: "Encode Sans SC", sans-serif;
+  font-weight: 600;
+}
+.seccion3 .btn--inicio {
+  margin-left: 5rem;
+}
+.seccion3 video {
+  height: 80rem;
+  background-size: cover;
+  object-fit: cover;
+  object-position: center center;
 }
