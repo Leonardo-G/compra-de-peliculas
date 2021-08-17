@@ -29,7 +29,7 @@ function imprimirPeliculas(carrito){
         const li = document.createElement("li");
         li.classList.add("listaCarrito__pelicula");
         li.innerHTML = `
-            <img class="imgCarrito" src="${pelicula.img}" alt="${pelicula.nombre}">
+            <img class="imgCarrito" src=".${pelicula.img}" alt="${pelicula.nombre}">
             <h3>${pelicula.nombre}</h3>
             <p class="precioCarrito">${pelicula.precio}</p>
         `;
