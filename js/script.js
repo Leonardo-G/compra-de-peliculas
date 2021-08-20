@@ -22,8 +22,9 @@ const cerrarLista = document.querySelector(".cerrarLista");
 const fondo = document.querySelector("#fondo");
 const lista = document.querySelector(".listaCarrito ul");
 let precioCarrito = document.querySelector(".precioLista #precio");
-let carrito = [];
 
+const formulario = document.querySelector("#formulario");
+let carrito = [];
 video.disabledPictureInPicture = true; //Todavia no soportado en Firefox 
 
 //Sonido video de portada
@@ -44,24 +45,21 @@ function eventos(){
     document.addEventListener("DOMContentLoaded", () => {
         recibirLocalStorage();
         cargandoJSON();
-        console.log(carrito)
-    });
+        agregarYear()
+    });0
     sonido.addEventListener("click", sonidoEnable)
     iconoKart.addEventListener("click", aparecerLista)
 }
 //Buscar Pelicula
 const buscadorGenero = document.querySelector("#genero")
-
+const buscandoYear = document.querySelector("#year")
 
 let objBusqueda = {
     genero: "",
-    genero2: ""
+    genero2: "",
+    year: ""
 }
 
-function buscarPelicula(peliculas){
-    
-    console.log(peliculas)
-}
 function cargandoJSON(){
     const url = "js/peliculas.json";
 
@@ -73,33 +71,72 @@ function cargandoJSON(){
 
             //Imprimimos las peliculas segun el genero que selecciona el usuario
             buscadorGenero.addEventListener("change", (e) => {
-                
-                spinnerBuscando();
-
                 objBusqueda.genero = e.target.value;
                 objBusqueda.genero2 = e.target.value;
-                let buscando = resultado.filter( pelicula => pelicula.genero === objBusqueda.genero );
-                let buscando2 = resultado.filter(pelicula => pelicula.genero2 === objBusqueda.genero2);
-                const resultadoBusqueda = [...buscando, ...buscando2];
-                
-                //Aclaramos que no hay peliculas segun se busqueda
-                if(resultadoBusqueda.length === 0){
-                    limpiarHTML(catalogoSeccion);
-                    const busquedaNula = document.createElement("h2");
-                    busquedaNula.textContent = "No encontramos lo que buscas... :/";
-                    catalogoSeccion.appendChild(busquedaNula)
-                    return;
-                }
 
-                setTimeout(() => {
-                    //Mostrar resultado de la busqueda
-                    limpiarHTML(catalogoSeccion);
-                    imprimirHTML(resultadoBusqueda);
-                }, 2000);
+                buscando(resultado)
             });
 
+            buscandoYear.addEventListener("change", (e) => {
+                objBusqueda.year = e.target.value;
+
+                buscando(resultado)
+            });
         })
 };
+
+function buscando(resultado){
+
+    spinnerBuscando();
+
+    let buscando = resultado.filter( buscarGenero1 )
+    let buscando2 = resultado.filter( buscarGenero2);
+    let resultadoBusqueda = [...buscando, ...buscando2];
+
+    
+    resultadoBusqueda = resultadoBusqueda.filter( buscarYear )
+
+
+    //Aclaramos que no hay peliculas segun se busqueda
+    if(resultadoBusqueda.length === 0){
+        limpiarHTML(catalogoSeccion);
+
+        const busquedaNula = document.createElement("h2");
+        busquedaNula.textContent = "No encontramos lo que buscas... :/";
+        catalogoSeccion.appendChild(busquedaNula);
+
+        return;
+    }
+    setTimeout(() => {
+        //Mostrar resultado de la busqueda
+        limpiarHTML(catalogoSeccion);
+        imprimirHTML(resultadoBusqueda);
+    }, 2000);
+};
+
+function buscarGenero1(pelicula){
+    if( objBusqueda.genero ){
+        return pelicula.genero === objBusqueda.genero;
+    }
+    //En caso de que el usuario no seleccione un genero, retornamos devuelta el arreglo completo
+    return pelicula
+}
+
+function buscarGenero2(pelicula){
+    if( objBusqueda.genero2 ){
+        return pelicula.genero2 === objBusqueda.genero2;
+    }
+    //En caso de que el usuario no seleccione un genero, retornamos devuelta el arreglo completo
+    return null
+}
+
+function buscarYear(pelicula){
+    if( objBusqueda.year ){
+        return pelicula.year >= objBusqueda.year;
+    }
+    //En caso de que el usuario no seleccione un genero, retornamos devuelta el arreglo completo
+    return pelicula
+}
 
 //Spinner al buscar una pelicula
 function spinnerBuscando(){
@@ -120,11 +157,25 @@ function spinnerBuscando(){
 //Mas eventos
 const btnPagar = document.querySelector(".btn--pagar").addEventListener("click", pagar)
 
+function agregarYear(){
+    const year = new Date().getFullYear();
+    const year2 = year - 5;
+    const selectYear = document.querySelector("#year");
+
+    for(let i = year; i > year2; i--){
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        selectYear.appendChild(option)
+    }
+}
+
 
 function imprimirHTML(peliculas){
-    
+
     peliculas.forEach(pelicula => {
-        const { nombre, year, minutos, precio, img, id } = pelicula;
+        
+        const { nombre, year, minutos, precio, img, id} = pelicula;
         catalogoSeccion.innerHTML += `
             <div class="pelicula__seccion" data-id="${id}">
                 <div class="bloque">
@@ -150,34 +201,25 @@ function imprimirHTML(peliculas){
             </div>
         `;
     });
-    agregarBoton("Agregar al carrito")
+    agregarBoton();
 }
 
-function agregarBoton(mensaje, tipo){
-
+function agregarBoton(){
     //Agregar btn por cada pelicula
     const agregarBotones = document.querySelectorAll(".hover__descripcion");
 
     agregarBotones.forEach(agregarBtn => {
         const btn = document.createElement("button");
         btn.classList.add("descripcon--btn" , "btn");
-        btn.textContent = mensaje;
+        btn.textContent = "Agregar al carrito";
         agregarBtn.appendChild(btn);
 
         btn.addEventListener("click", agregarCarrito);
     })
-
-    if(tipo === "noAgregar"){
-        btn.textContent = mensaje;
-        return;
-    }
-    if(tipo === "subscrito"){
-        btn.textContent = mensaje;
-        //Luego agregar el link al btn con nombre para VER PELICULA
-    }
-}
+};
 
 function agregarCarrito(e){
+    e.target.textContent = "Agregado"
     const infoPelicula = e.target.parentElement.parentElement.parentElement;
     const objPelicula = creandoObjetoPelicula(infoPelicula);
 

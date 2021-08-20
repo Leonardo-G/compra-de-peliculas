@@ -7,7 +7,8 @@
         "genero2": "Aventura",
         "precio": 1500,
         "img": "./img/catalogo/blueb_007d_g_spa-ar_70x100_43a5cf52.webp",
-        "id": 1
+        "id": 1,
+        "video": "https://www.youtube.com/watch?v=gR3JFH_3LhY"
     },
     {
         "nombre": "Un jefe en pañales",
@@ -17,7 +18,8 @@
         "genero2": "Comedia",
         "precio": 700,
         "img": "./img/catalogo/jefeen.jpg",
-        "id": 2 
+        "id": 2,
+        "video": "https://www.youtube.com/watch?v=-wzK-lLFrZI"
     },
     {
         "nombre": "El conjuro",
