@@ -76,14 +76,18 @@
     }
 }
 
-.seccion3{
+.video{
+    position: relative;
+}
+
+.seccion3__texto{
     position: relative;
     .textoSeccion{
         position: absolute;
         top: 50%;
         left: 0;
         transform: translateY(-50%);
-        z-index: 9;
+        z-index: 3;
     }
     .fondo{
         position: absolute;
@@ -91,16 +95,16 @@
         top: 0;
         width: 0;
         height: 0;
-        border-right: 40rem solid transparent;
-        border-top: 40rem solid transparent;
-        border-left: 40rem solid transparent;
-        border-bottom: 40rem solid #fff;
+        border-right: 35rem solid transparent;
+        border-top: 35rem solid transparent;
+        border-left: 35em solid transparent;
+        border-bottom: 35rem solid #fff;
         transform: rotate(90deg);
-        z-index: 9;
+        z-index: 2;
     }
     p{
         padding: 1rem;
-        width: 40rem;
+        width: 30rem;
         font-size: 3rem;
         line-height: 2.5rem;
         color: #000;
@@ -111,9 +115,57 @@
         margin-left: 5rem;
     }
     video{
-        height: 80rem;
+        height: 70rem;
         background-size: cover;
         object-fit: cover;
         object-position: center center;
+    }
+}
+
+@media (max-width: 720px) {
+    .seccion2{
+        grid-template-columns: 1fr;
+        .seccion2__texto{
+            grid-row: 1/2;
+            padding: 10rem 5rem;
+        }
+        .seccion2__imagenes{
+            height: 50rem;
+            transition: 1s;
+        }
+    }
+    .seccion3__texto{
+        .fondo{
+            display: none;
+        }
+        p{
+            color: #fff;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .nosotros{
+        grid-template-columns: 1fr;
+        row-gap: 4rem;
+    }
+    .seccion3__texto{
+        .textoSeccion, p{
+            width: 90%;
+            text-align: center;
+        }
+        .btn--inicio{
+            display: block;
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .seccion2{
+        .seccion2__texto{
+            grid-row: 1/2;
+            padding: 10rem 1rem;
+        }
     }
 }

@@ -1,31 +1,56 @@
-const tituloInicial = $(".presentacion")
-const imgNosotros = $(".imgNosotros")
-const caja1 = $(".animation1");
-const caja2 = $(".animation2");
-const caja3 = $(".animation3");
-const caja4 = $(".animation4");
-const video = $(".video video");
+const menuNav = document.querySelector(".menuNav");
+const navEnlaces = document.querySelector(".navegacion__enlaces");
+const body = document.querySelector("#body");
 
-$(document).on("scroll", subirElemento);
-$(document).ready(() => {
-    tituloInicial.css("transform", "translateY(0%)")
-})
 
-function subirElemento(){
-    let ver = document.documentElement.scrollTop;
+const titulo = document.querySelector(".presentacion");
+const animation1 = document.querySelector(".animation1");
+const animation2 = document.querySelector(".animation2");
+const animation3 = document.querySelector(".animation3");
+const animation4 = document.querySelector(".animation4");
 
-    if(ver > 400){
-        imgNosotros.css("transform", "translateY(0%)")
-    }
+const imgPortada = document.querySelector(".divPortada");
+const nosotros = document.querySelector(".nosotros");
+const nosotrosImg = document.querySelector(".nosotros img");
 
-    if(ver > 1000){
-        caja1.css("transform", "translateY(0%)")
-        caja2.css("transform", "translateY(0%)")
-        caja3.css("transform", "translateY(0%)")
-        caja4.css("transform", "translateY(0%)")
-    }
+const seccionAnimacion = [animation1, animation2, animation3, animation4];
 
-    if(ver > 1700){
-        video[0].autoplay = true;
-    }
+menuNav.addEventListener("click", abrirMenu);
+window.addEventListener("scroll", animacionSecciones);
+
+//Funciones
+function abrirMenu(){
+    navEnlaces.classList.toggle("menuVisible");
+    navegacion.classList.toggle("fixed");
+    body.classList.toggle("scrollBody");
+};
+
+animacionPortada();
+function animacionPortada(){
+    const callback = entries => {
+        if(entries[0].isIntersecting){
+            titulo.style.transform = "translateY(0%)"
+        };
+    };
+    const option = {
+        treshold: 0.25
+    };
+    const observerInt = new IntersectionObserver(callback, option);
+    observerInt.observe(imgPortada);
 }
+
+function animacionSecciones(){
+    const scrollVer = nosotros.getBoundingClientRect().top;
+    const ventana = window.innerHeight / 1.3;
+    
+    if(scrollVer < ventana){
+        nosotrosImg.style.transform = "translateY(0%)";
+    }
+    
+    if(scrollVer < 400){
+        seccionAnimacion.forEach(elemento => {
+            elemento.style.transform = "translate(0%)";
+        });
+    }
+};
+

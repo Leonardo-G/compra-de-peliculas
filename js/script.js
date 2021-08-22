@@ -46,7 +46,7 @@ function eventos(){
         recibirLocalStorage();
         cargandoJSON();
         agregarYear()
-    });0
+    });
     sonido.addEventListener("click", sonidoEnable)
     iconoKart.addEventListener("click", aparecerLista)
 }
@@ -201,6 +201,7 @@ function imprimirHTML(peliculas){
             </div>
         `;
     });
+
     agregarBoton();
 }
 
@@ -219,7 +220,7 @@ function agregarBoton(){
 };
 
 function agregarCarrito(e){
-    e.target.textContent = "Agregado"
+    e.target.textContent = "Agregado";
     const infoPelicula = e.target.parentElement.parentElement.parentElement;
     const objPelicula = creandoObjetoPelicula(infoPelicula);
 
@@ -341,6 +342,7 @@ function eliminarElemento(li, pelicula){
         number.textContent = carrito.length;
         listaCarrito();
     };
+
 }
 
 function precioTotal(){
@@ -372,7 +374,7 @@ function recibirLocalStorage(){
 //PAGAR
 function pagar(e){
     // recuperando la informacion de cuanto hay que pagar
-    const precioTotalAPagar = document.querySelector("#precio").textContent;
+    const precioTotalAPagar = document.querySelector(".precioLista #precio").textContent;
 
     //Si no hay elementos en el carrito, no se podra pagar.
     if(precioTotalAPagar === "0"){
@@ -380,3 +382,16 @@ function pagar(e){
         notificacion("No hay elementos en el carrito")
     }
 }
+
+const btnVaciarCarrito = document.querySelector("#vaciarCarrito").addEventListener("click", vaciarCarrito);
+
+function vaciarCarrito(){
+    carrito.splice(0, carrito.length);
+    listaCarrito();
+
+    const descripcionBtn = document.querySelectorAll(".descripcon--btn");
+    descripcionBtn.forEach(btn => btn.textContent = "Agregar al carrito");
+
+    document.querySelector(".kart-number .number").textContent = 0;
+}
+

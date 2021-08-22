@@ -12,13 +12,22 @@
     <link rel="stylesheet" href="../css/app.css">
 </head>
 <body>
-    <header>
+    <header id="inicio">
         <nav class="navegacion">
-            <a href="../index.html">Catálogo</a>
-            <a href="inicio.html"><p class="logo">PeliS</p></a>
-            <a href="#">Subscribirse</a>
+            <div>
+                <a href="inicio.html"><p class="logo">PeliS</p></a>
+            </div>
+            <div>
+                <div class="navegacion__menuHamburguesa">
+                    <svg class="menuNav" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 103"><title>menu-hamburguesa1</title><path d="M112,10.5H12C5.4,10.5,0,13.87,0,18s5.4,7.5,12,7.5H112c6.6,0,12-3.37,12-7.5S118.6,10.5,112,10.5Z" transform="translate(0 -10.5)"/><path d="M112,54.5H12C5.4,54.5,0,57.88,0,62s5.4,7.5,12,7.5H112c6.6,0,12-3.38,12-7.5S118.6,54.5,112,54.5Z" transform="translate(0 -10.5)"/><path d="M112,98.5H12c-6.6,0-12,3.38-12,7.5s5.4,7.5,12,7.5H112c6.6,0,12-3.38,12-7.5S118.6,98.5,112,98.5Z" transform="translate(0 -10.5)"/></svg>
+                </div>
+                <div class="navegacion__enlaces">
+                    <a href="../index.html">Catálogo</a>
+                    <a href="#">Subscribirse</a>
+                </div>
+            </div>
         </nav>
-        <div>
+        <div class="divPortada">
             <img class="imgPortada" src="../img/inicio/renacido_4.jpg"></img>
         </div>
         <div class="presentacion oculto">
@@ -27,7 +36,7 @@
         </div>
     </header>
     <main>
-        <section>
+        <section id="nosotros">
             <div class="contenedorAncho">
                 <div class="nosotros">
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam exercitationem quasi, dolorem aperiam omnis vero officia sunt, nisi qui voluptatem cumque laborum ipsa voluptates quod consequuntur in. Doloribus, in maiores.</p>
@@ -48,19 +57,42 @@
         </section>
         <section class="seccion3">
             <div class="seccion3__texto">
-                <div class="fondo">
+                <div class="video">
+                    <video src="../img/inicio/videoHover1 (online-video-cutter.com).mp4" loop muted autoplay></video>
+                    <div class="fondo"></div>
+                    <div class="textoSeccion">
+                        <p>Lleva contigo las mejores peliculas</p>
+                        <a href="../index.html"><button class="btn btn--inicio">Ver catálogo</button></a>
+                    </div>
                 </div>
-                <div class="textoSeccion">
-                    <p>Lleva contigo las mejores peliculas</p>
-                    <a href="../index.html"><button class="btn btn--inicio">Ver catálogo</button></a>
-                </div>
-            </div>
-            <div class="video">
-                <video src="../img/inicio/videoHover1 (online-video-cutter.com).mp4" loop muted></video>
             </div>
         </section>
     </main>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <footer>
+        <div class="pie">
+            <div class="pie__mapaSitio">
+                <div class="col-p1">
+                    <a href="#inicio">Inicio</a>
+                    <a href="../index.html">Catálogo</a>    
+                    <a href="../pages/subscribirse.html">Subscribirse</a>
+                </div>
+            </div>  
+            <div class="pie__subscripcion">
+                <h4>Subscribete para recibir las ultimas novedades</h4>
+                <p>Subscribete para rebibir las ultimas actualizaciones sobre nuestros contenidos y nuevas peliculas.</p>
+                <div class="group-subs">
+                    <input type="email" placeholder="Email de subscripción">
+                    <button type="submit"><img class="button-img" src="../img/flecha-apuntando-a-la-derecha (1).svg" alt="boton de enviar"></button>
+                </div>
+            </div>          
+            <div class="pie__red">
+                <a href="https://www.instagram.com"><img class="instagram" src="../img/instagram_internet_media_network_social_icon_123258.svg" alt="red social Instagram"></a>
+                <a href="https://www.twitter.com"><img class="twitter" src="../img/twitter-logo-on-black-background_icon-icons.com_72503.svg" alt="red social Twitter"></a>
+            </div>
+        </div>
+        <p class="derechos">Copyrigth. Derechos reservados 2009 - 2021</p>
+    </footer>
+    
     <script src="../js/inicio.js"></script>
 </body>
 </html>

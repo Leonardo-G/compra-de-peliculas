@@ -280,6 +280,7 @@
     position: fixed;
     transition: all 0.2s ease-in;
     cursor: url(../img/marca-x.png), pointer;
+    z-index: 99;
 }
 
 .eliminarPelicula{
@@ -320,14 +321,14 @@
         }
         .descripcion{
             top: 0;
-            z-index: 9;
+            z-index: 1;
             height: 20%;
             align-items: center;
             &::after, &:before{
                 visibility: hidden;
             }
             .descripcion__year, .minutos p{
-                color: #e1e1e1b4;
+                color: #e1e1e1c2;
                 font-size: 1.6rem;
             }
             .tituloBloque{

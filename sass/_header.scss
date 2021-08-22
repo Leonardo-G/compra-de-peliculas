@@ -8,7 +8,8 @@
     align-items: center;
     width: 100%;
     z-index: 2;
-    margin-top: 3rem;
+    padding-top: 3rem;
+    background-color: transparent;
     .logo{
         font-size: 5rem;
         font-family: 'Encode Sans SC', sans-serif;
@@ -17,6 +18,9 @@
     }
     a{
         padding: 1rem 2rem;
+    }
+    .navegacion__menuHamburguesa{
+        display: none;
     }
 }
 
@@ -66,5 +70,62 @@
     }
     &:hover .sonidoIcon{
         color: #fff;
+    }
+}
+
+@media (max-width: 720px) {
+    .navegacion{
+        .navegacion__enlaces{
+            top: 0;
+            right: 0;
+            background-color: #774E4E;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            visibility: hidden;
+            z-index: 98;
+            transform: translateX(100%);
+            transition: 0.4s;
+            a{
+                padding: 3rem 0;
+            }
+        }
+        .navegacion__menuHamburguesa{
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            z-index: 9999;
+        }
+        .menuNav{
+            width: 4rem;
+            fill: #fff;
+            cursor: pointer;
+            z-index: 99;
+        }
+        .menuVisible{
+            visibility: visible;
+            transform: translateX(0%);
+        }
+    }
+    .fixed{
+        position: fixed;
+    }
+    .scrollBody{
+        overflow-y: hidden;
+    }
+}
+@media (max-width: 480px) {
+    .presentacion{
+        .titulo{
+            font-size: 4rem;
+        }
+        p{
+            font-size: 3rem;
+        }
     }
 }
