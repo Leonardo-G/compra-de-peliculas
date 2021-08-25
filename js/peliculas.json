@@ -9,7 +9,7 @@
         "img": "./img/catalogo/blueb_007d_g_spa-ar_70x100_43a5cf52.webp",
         "id": 1,
         "video": {
-            "link": "https://www.youtube.com/watch?v=gR3JFH_3LhY"
+            "link": "https://www.youtube.com/embed/gR3JFH_3LhY"
         }
     },
     {
@@ -22,7 +22,7 @@
         "img": "./img/catalogo/jefeen.jpg",
         "id": 2,
         "video": {
-            "link": "https://www.youtube.com/watch?v=-wzK-lLFrZI"
+            "link": "https://www.youtube.com/embed/-wzK-lLFrZI"
         }
     },
     {
@@ -35,7 +35,7 @@
         "img": "./img/catalogo/ElConjuroPoster.webp", 
         "id": 3,
         "video": {
-            "link": "https://www.youtube.com/watch?v=oUyHULb7xDI"
+            "link": "https://www.youtube.com/embed/oUyHULb7xDI"
         }
     },
     {
@@ -48,7 +48,7 @@
         "img": "./img/catalogo/644551_p.jpg",
         "id": 4,
         "video": {
-            "link": "https://www.youtube.com/watch?v=YAbI4w95cTE"
+            "link": "https://www.youtube.com/embed/YAbI4w95cTE"
         }
     },
     {
@@ -60,7 +60,7 @@
         "img": "./img/catalogo/renacido.jpg",
         "id": 5,
         "video": {
-            "link": "https://www.youtube.com/watch?v=MM1UVWfwwXk"
+            "link": "https://www.youtube.com/embed/MM1UVWfwwXk"
         }
     },
     {
@@ -73,7 +73,7 @@
         "img": "./img/catalogo/ligaJusticia.jpg",
         "id": 6,
         "video": {
-            "link": "https://www.youtube.com/watch?v=fp_milOcghU"
+            "link": "https://www.youtube.com//embed/fp_milOcghU"
         }
     },
     {
@@ -86,7 +86,7 @@
         "img": "./img/catalogo/madMax.webp",
         "id": 7,
         "video": {
-            "link": "https://www.youtube.com/watch?v=hEJnMQG9ev8"
+            "link": "https://www.youtube.com/embed/hEJnMQG9ev8"
         } 
     },
     {
@@ -99,7 +99,7 @@
         "img": "./img/catalogo/godzillavskong.webp",
         "id": 8,
         "video": {
-            "link": "https://www.youtube.com/watch?v=RIKOJP9PHP0"
+            "link": "https://www.youtube.com/embed/RIKOJP9PHP0"
         }
     },
     {
@@ -112,7 +112,7 @@
         "img": "./img/catalogo/mortalkombat.webp",
         "id": 9,
         "video": {
-            "link": "https://www.youtube.com/watch?v=Y2O4RCdwCGM"
+            "link": "https://www.youtube.com/embed/NYH2sLid0Zc"
         }
     },
     {
@@ -125,7 +125,7 @@
         "img": "./img/catalogo/rapidoyfurioso.webp",
         "id": 10,
         "video": {
-            "link": "https://www.youtube.com/watch?v=t3DpuQrBivU"
+            "link": "https://www.youtube.com/embed/t3DpuQrBivU"
         }
     },
     {
@@ -138,7 +138,7 @@
         "img": "./img/catalogo/cruella.jpg",
         "id": 11,
         "video": {
-            "link": "https://www.youtube.com/watch?v=Uibt8QRqn88"
+            "link": "https://www.youtube.com/embed/gmRKv7n2If8"
         } 
     },
     {
@@ -151,7 +151,7 @@
         "img": "./img/catalogo/escuadron.jpg",
         "id": 12,
         "video": {
-            "link": "https://www.youtube.com/watch?v=c3h7Qxm3KnE"
+            "link": "https://www.youtube.com/embed/c3h7Qxm3KnE"
         }
     },
     {
@@ -163,7 +163,7 @@
         "img": "./img/catalogo/moonlight.jpg",
         "id": 13,
         "video": {
-            "link": "https://www.youtube.com/watch?v=VzetxI2f22Y"
+            "link": "https://www.youtube.com/embed/VzetxI2f22Y"
         } 
     },
     {
@@ -175,7 +175,7 @@
         "img": "./img/catalogo/harry-potter.webp",
         "id": 14,
         "video": {
-            "link": "https://www.youtube.com/watch?v=I8KCaGH780w"
+            "link": "https://www.youtube.com/embed/I8KCaGH780w"
         }  
     },
     {
@@ -188,7 +188,7 @@
         "img": "./img/catalogo/transformers.webp",
         "id": 15,
         "video": {
-            "link": "https://www.youtube.com/watch?v=kHRf01Gjosk"
+            "link": "https://www.youtube.com/embed/kHRf01Gjosk"
         }   
     },
     {
@@ -201,7 +201,7 @@
         "img": "./img/catalogo/piratas-del-caribe.jpg",
         "id": 16,
         "video": {
-            "link": "https://www.youtube.com/watch?v=ojvNfJjX8OQ"
+            "link": "https://www.youtube.com/embed/ojvNfJjX8OQ"
         }    
     }
 ]

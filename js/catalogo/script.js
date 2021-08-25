@@ -71,13 +71,14 @@ function cargandoJSON(){
                 objBusqueda.genero = e.target.value;
                 objBusqueda.genero2 = e.target.value;
 
-                buscando(resultado)
+                buscando(resultado);
             });
 
+            //Buscando el año
             buscandoYear.addEventListener("change", (e) => {
                 objBusqueda.year = e.target.value;
 
-                buscando(resultado)
+                buscando(resultado);
             });
         })
 };

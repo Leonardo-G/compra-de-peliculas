@@ -25,10 +25,43 @@ export function imprimirHTMLSubscripto(peliculas){
                         <h3 class="fondoTitulo">${nombre}</h3>
                     </div>
                     <div class="hover__descripcion">
-                        <button class="descripcon--btn btn"><a href="${link}">Ver Pelicula</a></button>
+                        <button class="descripcon--btn btn--verPelicula btn"><a href="${link}">Ver Pelicula</a></button>
                     </div>
                 </div>
             </div>
         `;
     });
+    agregarBotonPelicula()
+}
+
+//Agregamos el boton para cada pelicula
+function agregarBotonPelicula(){
+    const btnVerPelicula = document.querySelectorAll(".btn--verPelicula");
+    btnVerPelicula.forEach(btnPelicula => {
+        btnPelicula.addEventListener("click", verPelicula);
+    })
+};
+
+function verPelicula(e){
+    e.preventDefault();
+    const divCine = document.querySelector("#verPeliculaSubscripto");
+    
+    const cinePelicula = document.createElement("div");
+    cinePelicula.classList.add("fondoSubscripcion")
+
+    const iframe = document.createElement("iframe");
+    iframe.src = e.target.href;
+    iframe.allowFullscreen = true
+
+    const btnCerrar = document.createElement("p");
+    btnCerrar.textContent = "X";
+    btnCerrar.classList.add("cerrarVideo")
+
+    cinePelicula.appendChild(btnCerrar)
+    cinePelicula.appendChild(iframe);
+    divCine.appendChild(cinePelicula);
+
+    btnCerrar.onclick = () => {
+        cinePelicula.remove()
+    }
 }
