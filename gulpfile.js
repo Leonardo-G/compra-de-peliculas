@@ -7,9 +7,9 @@ function buildStyles() {
     .pipe(dest('./css'));
 };
 
-function wacthArchivo(){
+function watchArchivo(){
     watch('./sass/*.scss', buildStyles)
 }
 
 exports.buildStyles = buildStyles;
-exports.wacthArchivo = wacthArchivo;
+exports.watchArchivo = watchArchivo;

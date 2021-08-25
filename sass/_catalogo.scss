@@ -1,5 +1,4 @@
 /*Catalogo*/
-
 .catalogo{
     margin: 5rem auto;
     width: min(90%, 130rem);
@@ -12,6 +11,9 @@
 #buscarPelicula{
     width: min(90%, 130rem);
     margin: 5rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
     label{
         font-size: 2rem;
         color: #fff;
@@ -113,7 +115,6 @@
             align-items: center;
             margin: 0 auto;
             width: 100%;
-            padding: 2rem;
             .precio{
                 font-size: 2.5rem;
                 margin: 1rem;
@@ -298,14 +299,12 @@
 .grupoBtn{
     width: 100%;
     display:flex;
-    .btn--pagar{
-        margin: 0 auto;
-    }
+    justify-content: space-around;
 }
 
 @media (max-width:1200px) {
     .pelicula{
-        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
         column-gap: 2rem;
         row-gap: 3rem;
         .pelicula__seccion, .hover, .bloque{
@@ -349,5 +348,41 @@
 @media (max-width: 720px) {
     .listaCarrito{
         width: 100%;
+    }
+}
+
+@media (max-width: 440px) {
+    #buscarPelicula{
+        label{
+            padding: 0;
+            font-size: 1.6rem;
+        }
+        select{
+            font-size: 1.4rem;
+        }
+    }
+    .pelicula{
+        grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+        .pelicula__seccion, .hover, .bloque{
+            height: 30rem;
+        }
+        .hover .hover__fondo {
+            .fondoTitulo{
+                font-size: 2.2rem
+            }
+        }
+        .pelicula__seccion{
+            .hover__descripcion{
+                .btn{
+                    padding: 0.5rem ;
+                }
+                a{
+                    font-size: 1.5rem;
+                }
+                .precio{
+                    font-size: 2rem;
+                }
+            }
+        }
     }
 }

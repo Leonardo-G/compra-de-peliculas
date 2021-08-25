@@ -1,6 +1,6 @@
 const menuNav = document.querySelector(".menuNav");
 const navEnlaces = document.querySelector(".navegacion__enlaces");
-const body = document.querySelector("#body");
+const body = document.querySelector("#inicio");
 
 
 const titulo = document.querySelector(".presentacion");
@@ -21,7 +21,6 @@ window.addEventListener("scroll", animacionSecciones);
 //Funciones
 function abrirMenu(){
     navEnlaces.classList.toggle("menuVisible");
-    navegacion.classList.toggle("fixed");
     body.classList.toggle("scrollBody");
 };
 

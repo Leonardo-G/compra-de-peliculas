@@ -115,10 +115,8 @@
     .fixed{
         position: fixed;
     }
-    .scrollBody{
-        overflow-y: hidden;
-    }
 }
+
 @media (max-width: 480px) {
     .presentacion{
         .titulo{
@@ -128,4 +126,8 @@
             font-size: 3rem;
         }
     }
+}
+
+.scrollBody{
+    overflow-y: hidden;
 }

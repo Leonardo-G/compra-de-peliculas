@@ -1,32 +1,30 @@
-//Clase
-class CarritoPeliculas{
-    constructor(nombre, precio, year, img, id){
-        this.nombre = nombre;
-        this.precio = precio;
-        this.year = year;
-        this.img = img;
-        this.id = id;
-    }
-}
-
+//Importamos
 //Variables
-const catalogoSeccion = document.querySelector(".pelicula");
-const video = document.querySelector("video");
-const sonido = document.querySelector(".sonido");
+import {video, sonido, catalogoSeccion, iconoKart, number, carritoOpen, cerrarLista, fondo, lista, precioCarrito, formulario, buscadorGenero, buscandoYear, menuNav, navEnlaces, body } from "./variables.js";
 
-//variables de la lista del Carrito
-const iconoKart = document.querySelector(".kart");
-const number = document.querySelector(".number");
-const carritoOpen = document.querySelector(".listaCarrito");
-const cerrarLista = document.querySelector(".cerrarLista");
-const fondo = document.querySelector("#fondo");
-const lista = document.querySelector(".listaCarrito ul");
-let precioCarrito = document.querySelector(".precioLista #precio");
-
-const formulario = document.querySelector("#formulario");
+//Clase
+import { CarritoPeliculas } from "./CarritoPeliculas.js";
+import { imprimirHTMLSubscripto } from "./subscripto.js";
 let carrito = [];
-video.disabledPictureInPicture = true; //Todavia no soportado en Firefox 
 
+
+//Eventos
+document.addEventListener("DOMContentLoaded", () => {
+    recibirLocalStorage();
+    cargandoJSON();
+    agregarYear();
+});
+
+menuNav.addEventListener("click", abrirMenu);
+sonido.addEventListener("click", sonidoEnable)
+iconoKart.addEventListener("click", aparecerLista);
+document.querySelector(".btn--pagar").addEventListener("click", pagar)
+document.querySelector("#vaciarCarrito").addEventListener("click", vaciarCarrito);
+
+//Obtenemos la informacion en caso de que el usuario se subscribe
+let subscripto = localStorage.getItem("subscripcion") || false;
+
+//Funciones
 //Sonido video de portada
 function sonidoEnable(){
     if(video.muted){
@@ -39,26 +37,21 @@ function sonidoEnable(){
     }
 }
 
-//Eventos
-eventos();
-function eventos(){
-    document.addEventListener("DOMContentLoaded", () => {
-        recibirLocalStorage();
-        cargandoJSON();
-        agregarYear()
-    });
-    sonido.addEventListener("click", sonidoEnable)
-    iconoKart.addEventListener("click", aparecerLista)
-}
-//Buscar Pelicula
-const buscadorGenero = document.querySelector("#genero")
-const buscandoYear = document.querySelector("#year")
+video.disabledPictureInPicture = true; //Todavia no soportado en Firefox 
 
+//Menu de navegacion
+function abrirMenu(){
+    navEnlaces.classList.toggle("menuVisible");
+    body.classList.toggle("scrollBody");
+};
+
+//Objeto para guardar los valores de la busqueda de los selects
 let objBusqueda = {
     genero: "",
     genero2: "",
     year: ""
 }
+
 
 function cargandoJSON(){
     const url = "js/peliculas.json";
@@ -67,7 +60,11 @@ function cargandoJSON(){
         .then(respuesta => respuesta.json())
         .then(resultado => {
             //Imprimimos las peliculas al cargar el documento
-            imprimirHTML(resultado);
+            if(subscripto == "true"){
+                imprimirHTMLSubscripto(resultado);
+            }else{
+                imprimirHTML(resultado);
+            }
 
             //Imprimimos las peliculas segun el genero que selecciona el usuario
             buscadorGenero.addEventListener("change", (e) => {
@@ -89,11 +86,10 @@ function buscando(resultado){
 
     spinnerBuscando();
 
+    //Buscamos los resultados y lo guardamos en un arreglo
     let buscando = resultado.filter( buscarGenero1 )
     let buscando2 = resultado.filter( buscarGenero2);
     let resultadoBusqueda = [...buscando, ...buscando2];
-
-    
     resultadoBusqueda = resultadoBusqueda.filter( buscarYear )
 
 
@@ -107,36 +103,45 @@ function buscando(resultado){
 
         return;
     }
+
+    //Simulamos una carga de 2s
     setTimeout(() => {
         //Mostrar resultado de la busqueda
         limpiarHTML(catalogoSeccion);
-        imprimirHTML(resultadoBusqueda);
+        if(subscripto == "true"){
+            imprimirHTMLSubscripto(resultadoBusqueda)
+        }else{
+            imprimirHTML(resultadoBusqueda);
+        }
     }, 2000);
 };
 
+
+/////////////////////FILTRANDO LA BUSQUEDA///////////////////
 function buscarGenero1(pelicula){
     if( objBusqueda.genero ){
         return pelicula.genero === objBusqueda.genero;
     }
     //En caso de que el usuario no seleccione un genero, retornamos devuelta el arreglo completo
-    return pelicula
+    return pelicula;
 }
 
 function buscarGenero2(pelicula){
     if( objBusqueda.genero2 ){
         return pelicula.genero2 === objBusqueda.genero2;
     }
-    //En caso de que el usuario no seleccione un genero, retornamos devuelta el arreglo completo
-    return null
+    //En caso de que el usuario no seleccione un genero, no retornamos nada, porque ya lo hicimos en el filtro anterior en genero1
+    return null;
 }
 
 function buscarYear(pelicula){
     if( objBusqueda.year ){
         return pelicula.year >= objBusqueda.year;
     }
-    //En caso de que el usuario no seleccione un genero, retornamos devuelta el arreglo completo
-    return pelicula
+    //En caso de que el usuario no seleccione un año, retornamos devuelta el arreglo completo
+    return pelicula;
 }
+///////////////////// Fin del FILTRO de la BUSQUEDA///////////////////
 
 //Spinner al buscar una pelicula
 function spinnerBuscando(){
@@ -154,9 +159,7 @@ function spinnerBuscando(){
     catalogoSeccion.appendChild(spinner)
 }
 
-//Mas eventos
-const btnPagar = document.querySelector(".btn--pagar").addEventListener("click", pagar)
-
+//Agregamos 5 años antes, segun en el año que estemos
 function agregarYear(){
     const year = new Date().getFullYear();
     const year2 = year - 5;
@@ -170,7 +173,7 @@ function agregarYear(){
     }
 }
 
-
+//Agregamos el HTML
 function imprimirHTML(peliculas){
 
     peliculas.forEach(pelicula => {
@@ -205,6 +208,7 @@ function imprimirHTML(peliculas){
     agregarBoton();
 }
 
+//Agregamos el boton para cada pelicula
 function agregarBoton(){
     //Agregar btn por cada pelicula
     const agregarBotones = document.querySelectorAll(".hover__descripcion");
@@ -219,6 +223,7 @@ function agregarBoton(){
     })
 };
 
+//Agregamos elementos al carrito
 function agregarCarrito(e){
     e.target.textContent = "Agregado";
     const infoPelicula = e.target.parentElement.parentElement.parentElement;
@@ -233,6 +238,7 @@ function agregarCarrito(e){
         return;
     }
 
+    //En caso de que el arreglo tenga mas de un elemento, aparece el icono del carrito
     if(carrito.length > 0){
         iconoKart.style.cssText = "opacity: 1; visibility: visible; cursor: pointer";
         number.textContent = carrito.length;
@@ -240,6 +246,7 @@ function agregarCarrito(e){
     }
 }
 
+//Creamos un objeto para cada elemento que agregamos al carrito
 function creandoObjetoPelicula(objeto){
     const nombre = objeto.querySelector(".tituloBloque").textContent;
     const precio = objeto.querySelector(".precio").textContent;
@@ -256,10 +263,10 @@ function contadorPelicula(arreglo, idObjeto){
     let contador = 0;
     arreglo.forEach(element => {
         if(element.id === idObjeto){
-           ++contador
+           ++contador;
         }
     })
-    return contador
+    return contador;
 }
 
 //Notificar al usuario al hacer click
@@ -267,6 +274,7 @@ function notificacion(mensaje, tipo){
 
     const alertaExiste = document.querySelector(".agregado");
 
+    //Agregar la notificación, solamente cuando no exista
     if(!alertaExiste){
         const alerta = document.querySelector(".alerta");
         const textAlerta = document.createElement("p");
@@ -290,6 +298,7 @@ function notificacion(mensaje, tipo){
     }
 }
 
+//Aparecer la lista del carrito
 function aparecerLista(){
     fondo.classList.toggle("fondoCarrito");
     carritoOpen.classList.toggle("aparicion");
@@ -303,6 +312,7 @@ function aparecerLista(){
     }
 }
 
+//Contenido de la lista del carrito
 function listaCarrito(){
     //Limpiar las listas repetidas antes de imprimir de nuevo
     limpiarHTML(lista);
@@ -337,6 +347,7 @@ function eliminarElemento(li, pelicula){
         <ion-icon name="close" class="eliminarPelicula" data-id=${pelicula.id}></ion-icon>
     `;
     li.appendChild(eliminar);
+
     eliminar.onclick = () => {
         carrito = carrito.filter( element => element.id !== pelicula.id);
         number.textContent = carrito.length;
@@ -345,13 +356,38 @@ function eliminarElemento(li, pelicula){
 
 }
 
+//Precio total de los elementos del carrito
 function precioTotal(){
     let gastado = carrito.reduce((total, gasto) =>{
         return total + (Number(gasto.precio) * 0.21) + Number(gasto.precio);
     }, 0);
 
     precioCarrito.textContent = gastado;
-    console.log(gastado)
+}
+
+
+
+//PAGAR
+function pagar(e){
+    // recuperando la informacion de cuanto hay que pagar
+    const precioTotalAPagar = document.querySelector(".precioLista #precio").textContent;
+
+    //Si no hay elementos en el carrito, no se podra pagar.
+    if(precioTotalAPagar === "0"){
+        e.preventDefault()
+        notificacion("No hay elementos en el carrito")
+    }
+}
+
+//Eliminamos todos los elementos del carrito con el boton vaciar carrito
+function vaciarCarrito(){
+    carrito.splice(0, carrito.length);
+    listaCarrito();
+
+    const descripcionBtn = document.querySelectorAll(".descripcon--btn");
+    descripcionBtn.forEach(btn => btn.textContent = "Agregar al carrito");
+
+    document.querySelector(".kart-number .number").textContent = 0;
 }
 
 //Guardar los datos del Local Storage
@@ -370,28 +406,3 @@ function recibirLocalStorage(){
         listaCarrito();
     }
 }
-
-//PAGAR
-function pagar(e){
-    // recuperando la informacion de cuanto hay que pagar
-    const precioTotalAPagar = document.querySelector(".precioLista #precio").textContent;
-
-    //Si no hay elementos en el carrito, no se podra pagar.
-    if(precioTotalAPagar === "0"){
-        e.preventDefault()
-        notificacion("No hay elementos en el carrito")
-    }
-}
-
-const btnVaciarCarrito = document.querySelector("#vaciarCarrito").addEventListener("click", vaciarCarrito);
-
-function vaciarCarrito(){
-    carrito.splice(0, carrito.length);
-    listaCarrito();
-
-    const descripcionBtn = document.querySelectorAll(".descripcon--btn");
-    descripcionBtn.forEach(btn => btn.textContent = "Agregar al carrito");
-
-    document.querySelector(".kart-number .number").textContent = 0;
-}
-

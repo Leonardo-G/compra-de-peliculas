@@ -14,21 +14,21 @@
     <!-- -------- -->
     <link rel="stylesheet" href="css/app.css">
 </head>
-<body>
+<body id="body">
 
     <header>
         <div class="sombraTop"></div>
         <nav class="navegacion">
             <div>
-                <a href="inicio.html"><p class="logo">PeliS</p></a>
+                <a href="./pages/inicio.html"><p class="logo">PeliS</p></a>
             </div>
             <div>
                 <div class="navegacion__menuHamburguesa">
                     <svg class="menuNav" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 103"><title>menu-hamburguesa1</title><path d="M112,10.5H12C5.4,10.5,0,13.87,0,18s5.4,7.5,12,7.5H112c6.6,0,12-3.37,12-7.5S118.6,10.5,112,10.5Z" transform="translate(0 -10.5)"/><path d="M112,54.5H12C5.4,54.5,0,57.88,0,62s5.4,7.5,12,7.5H112c6.6,0,12-3.38,12-7.5S118.6,54.5,112,54.5Z" transform="translate(0 -10.5)"/><path d="M112,98.5H12c-6.6,0-12,3.38-12,7.5s5.4,7.5,12,7.5H112c6.6,0,12-3.38,12-7.5S118.6,98.5,112,98.5Z" transform="translate(0 -10.5)"/></svg>
                 </div>
                 <div class="navegacion__enlaces">
-                    <a href="../index.html">Catálogo</a>
-                    <a href="#">Subscribirse</a>
+                    <a href="index.html">Catálogo</a>
+                    <a href="pages/subscribirse.html">Subscribirse</a>
                 </div>
             </div>
         </nav>
@@ -46,21 +46,25 @@
     </header>
     <main id="main">
         <form id="buscarPelicula">
-            <label for="genero">Buscar pelicula</label>
-            <select name="genero" id="genero">
-                <option value="" selected disabled>Seleccione un género</option>
-                <option value="Acción">Acción</option>
-                <option value="Drama">Drama</option>
-                <option value="Infantil">Infantil</option>
-                <option value="Terror">Terror</option>
-                <option value="Ficción">Ficción</option>
-                <option value="Comedia">Comedia</option>
-                <option value="Aventura">Aventura</option>
-            </select>
-            <label for="year">Desde</label>
-            <select name="year" id="year">
-                <option value="" selected disabled>Seleccionar año</option>
-            </select>
+            <div>
+                <label for="genero">Buscar pelicula</label>
+                <select name="genero" id="genero">
+                    <option value="" selected disabled>Seleccione un género</option>
+                    <option value="Acción">Acción</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Infantil">Infantil</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Ficción">Ficción</option>
+                    <option value="Comedia">Comedia</option>
+                    <option value="Aventura">Aventura</option>
+                </select>
+            </div>
+            <div>
+                <label for="year">Desde</label>
+                <select name="year" id="year">
+                    <option value="" selected disabled>Seleccionar año</option>
+                </select>
+            </div>
         </form>
         <section class="catalogo">
             <h2>Catálogo</h2>
@@ -114,6 +118,6 @@
         <p class="derechos">Copyrigth. Derechos reservados 2009 - 2021</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script type="module" src="js/catalogo/script.js"></script>
 </body>
 </html>

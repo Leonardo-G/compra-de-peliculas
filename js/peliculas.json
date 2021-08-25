@@ -8,7 +8,9 @@
         "precio": 1500,
         "img": "./img/catalogo/blueb_007d_g_spa-ar_70x100_43a5cf52.webp",
         "id": 1,
-        "video": "https://www.youtube.com/watch?v=gR3JFH_3LhY"
+        "video": {
+            "link": "https://www.youtube.com/watch?v=gR3JFH_3LhY"
+        }
     },
     {
         "nombre": "Un jefe en pañales",
@@ -19,7 +21,9 @@
         "precio": 700,
         "img": "./img/catalogo/jefeen.jpg",
         "id": 2,
-        "video": "https://www.youtube.com/watch?v=-wzK-lLFrZI"
+        "video": {
+            "link": "https://www.youtube.com/watch?v=-wzK-lLFrZI"
+        }
     },
     {
         "nombre": "El conjuro",
@@ -29,7 +33,10 @@
         "genero2": "Suspenso",
         "precio": 250,
         "img": "./img/catalogo/ElConjuroPoster.webp", 
-        "id": 3
+        "id": 3,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=oUyHULb7xDI"
+        }
     },
     {
         "nombre": "Kong",
@@ -39,7 +46,10 @@
         "genero2": "Aventura",
         "precio": 700,
         "img": "./img/catalogo/644551_p.jpg",
-        "id": 4 
+        "id": 4,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=YAbI4w95cTE"
+        }
     },
     {
         "nombre": "El renacido",
@@ -48,7 +58,10 @@
         "genero": "Aventura",
         "precio": 500,
         "img": "./img/catalogo/renacido.jpg",
-        "id": 5 
+        "id": 5,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=MM1UVWfwwXk"
+        }
     },
     {
         "nombre": "Liga de la justicia",
@@ -58,7 +71,10 @@
         "genero2": "Aventura",
         "precio": 1500,
         "img": "./img/catalogo/ligaJusticia.jpg",
-        "id": 6
+        "id": 6,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=fp_milOcghU"
+        }
     },
     {
         "nombre": "Mad Max",
@@ -68,7 +84,10 @@
         "genero2": "Acción",
         "precio": 300,
         "img": "./img/catalogo/madMax.webp",
-        "id": 7 
+        "id": 7,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=hEJnMQG9ev8"
+        } 
     },
     {
         "nombre": "Godzilla vs Kong",
@@ -78,7 +97,10 @@
         "genero2": "Acción",
         "precio": 1500,
         "img": "./img/catalogo/godzillavskong.webp",
-        "id": 8
+        "id": 8,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=RIKOJP9PHP0"
+        }
     },
     {
         "nombre": "Mortal Kombat",
@@ -88,7 +110,10 @@
         "genero2": "Fantasía",
         "precio": 1500,
         "img": "./img/catalogo/mortalkombat.webp",
-        "id": 9
+        "id": 9,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=Y2O4RCdwCGM"
+        }
     },
     {
         "nombre": "Rapido y furiosos 9",
@@ -98,7 +123,10 @@
         "genero2": "Aventura",
         "precio": 1500,
         "img": "./img/catalogo/rapidoyfurioso.webp",
-        "id": 10
+        "id": 10,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=t3DpuQrBivU"
+        }
     },
     {
         "nombre": "Cruella",
@@ -108,7 +136,10 @@
         "genero2": "Crimen",
         "precio": 1500,
         "img": "./img/catalogo/cruella.jpg",
-        "id": 11 
+        "id": 11,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=Uibt8QRqn88"
+        } 
     },
     {
         "nombre": "Escuadron Suicida 2",
@@ -118,7 +149,10 @@
         "genero2": "Aventura",
         "precio": 1500,
         "img": "./img/catalogo/escuadron.jpg",
-        "id": 12
+        "id": 12,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=c3h7Qxm3KnE"
+        }
     },
     {
         "nombre": "Moonlight",
@@ -127,7 +161,10 @@
         "genero": "Drama",
         "precio": 600,
         "img": "./img/catalogo/moonlight.jpg",
-        "id": 13 
+        "id": 13,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=VzetxI2f22Y"
+        } 
     },
     {
         "nombre": "Harry Potter y la reliquias de la muerte. Pt2",
@@ -136,7 +173,10 @@
         "genero": "Fantasía",
         "precio": 1000,
         "img": "./img/catalogo/harry-potter.webp",
-        "id": 14 
+        "id": 14,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=I8KCaGH780w"
+        }  
     },
     {
         "nombre": "Tranformers 3",
@@ -146,7 +186,10 @@
         "genero2": "Ficción",
         "precio": 600,
         "img": "./img/catalogo/transformers.webp",
-        "id": 15 
+        "id": 15,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=kHRf01Gjosk"
+        }   
     },
     {
         "nombre": "Piratas del Caribe 2",
@@ -156,6 +199,9 @@
         "genero2": "Aventura",
         "precio": 300,
         "img": "./img/catalogo/piratas-del-caribe.jpg",
-        "id": 16 
+        "id": 16,
+        "video": {
+            "link": "https://www.youtube.com/watch?v=ojvNfJjX8OQ"
+        }    
     }
 ]
