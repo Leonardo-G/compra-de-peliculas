@@ -203,5 +203,57 @@
         "video": {
             "link": "https://www.youtube.com/embed/ojvNfJjX8OQ"
         }    
+    },
+    {
+        "nombre": "Space Jam: una nueva era",
+        "year": 2021,
+        "minutos": 120,
+        "genero": "Infantil",
+        "genero2": "Comedia",
+        "precio": 900,
+        "img": "./img/catalogo/space-jam.webp",
+        "id": 17,
+        "video": {
+            "link": "https://www.youtube.com/embed/z7PSyWuArVQ"
+        } 
+    },
+    {
+        "nombre": "1917",
+        "year": 2019,
+        "minutos": 119,
+        "genero": "Aventura",
+        "genero2": "Drama",
+        "precio": 700,
+        "img": "./img/catalogo/1917.webp",
+        "id": 18,
+        "video": {
+            "link": "https://www.youtube.com/embed/dnQRalx6lzE"
+        } 
+    },
+    {
+        "nombre": "Joker",
+        "year": 2019,
+        "minutos": 122,
+        "genero": "Crimen",
+        "genero2": "Drama",
+        "precio": 1000,
+        "img": "./img/catalogo/joker.webp",
+        "id": 19,
+        "video": {
+            "link": "https://www.youtube.com/embed/8ZZ1l7QCVGE"
+        } 
+    },
+    {
+        "nombre": "El irlandés",
+        "year": 2019,
+        "minutos": 122,
+        "genero": "Crimen",
+        "genero2": "Drama",
+        "precio": 1000,
+        "img": "./img/catalogo/irlandes.webp",
+        "id": 20,
+        "video": {
+            "link": "https://www.youtube.com/embed/gZ6Oq9F3ho0"
+        } 
     }
 ]
