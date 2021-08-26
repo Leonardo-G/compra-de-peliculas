@@ -19,7 +19,7 @@
         "genero": "Infantil",
         "genero2": "Comedia",
         "precio": 700,
-        "img": "./img/catalogo/jefeen.jpg",
+        "img": "./img/catalogo/jefeen.webp",
         "id": 2,
         "video": {
             "link": "https://www.youtube.com/embed/-wzK-lLFrZI"
@@ -45,7 +45,7 @@
         "genero": "Acción",
         "genero2": "Aventura",
         "precio": 700,
-        "img": "./img/catalogo/644551_p.jpg",
+        "img": "./img/catalogo/644551_p.webp",
         "id": 4,
         "video": {
             "link": "https://www.youtube.com/embed/YAbI4w95cTE"
@@ -57,7 +57,7 @@
         "minutos": 156,
         "genero": "Aventura",
         "precio": 500,
-        "img": "./img/catalogo/renacido.jpg",
+        "img": "./img/catalogo/renacido.webp",
         "id": 5,
         "video": {
             "link": "https://www.youtube.com/embed/MM1UVWfwwXk"
@@ -70,7 +70,7 @@
         "genero": "Acción",
         "genero2": "Aventura",
         "precio": 1500,
-        "img": "./img/catalogo/ligaJusticia.jpg",
+        "img": "./img/catalogo/ligaJusticia.webp",
         "id": 6,
         "video": {
             "link": "https://www.youtube.com//embed/fp_milOcghU"
@@ -135,7 +135,7 @@
         "genero": "Comedia",
         "genero2": "Crimen",
         "precio": 1500,
-        "img": "./img/catalogo/cruella.jpg",
+        "img": "./img/catalogo/cruella.webp",
         "id": 11,
         "video": {
             "link": "https://www.youtube.com/embed/gmRKv7n2If8"
@@ -148,7 +148,7 @@
         "genero": "Acción",
         "genero2": "Aventura",
         "precio": 1500,
-        "img": "./img/catalogo/escuadron.jpg",
+        "img": "./img/catalogo/escuadron.webp",
         "id": 12,
         "video": {
             "link": "https://www.youtube.com/embed/c3h7Qxm3KnE"
@@ -160,7 +160,7 @@
         "minutos": 111,
         "genero": "Drama",
         "precio": 600,
-        "img": "./img/catalogo/moonlight.jpg",
+        "img": "./img/catalogo/moonlight.webp",
         "id": 13,
         "video": {
             "link": "https://www.youtube.com/embed/VzetxI2f22Y"
@@ -198,7 +198,7 @@
         "genero": "Acción",
         "genero2": "Aventura",
         "precio": 300,
-        "img": "./img/catalogo/piratas-del-caribe.jpg",
+        "img": "./img/catalogo/piratas-del-caribe.webp",
         "id": 16,
         "video": {
             "link": "https://www.youtube.com/embed/ojvNfJjX8OQ"

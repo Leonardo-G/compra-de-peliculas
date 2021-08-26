@@ -6,7 +6,6 @@
         margin: 5rem;
     }
 }
-
 //Buscador
 #buscarPelicula{
     width: min(90%, 130rem);
@@ -22,7 +21,6 @@
 }
 
 //BOTON
-
 .btn, select{
     border: 1px solid #707070;
     padding: 1rem;
@@ -34,7 +32,6 @@
 .btn:hover{
     background-color: #5f525e;
 }
-
 .pelicula{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -124,12 +121,10 @@
         }   
     }
 }
-
 .pelicula__seccion, .hover, .bloque{
     height: 60rem;
     position: relative;
 }
-
 .kart{
     width: 10rem;
     height: 10rem;
@@ -150,8 +145,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
-        
+        transform: translate(-50%,-50%);       
     }
     .kart-number{
         position: relative;
@@ -169,7 +163,6 @@
         }
     }
 }
-
 .listaCarrito{
     position: absolute;
     top: 0;
@@ -231,14 +224,12 @@
         }
     }
 }
-
 .aparicion{
     visibility: visible;
     opacity: 1;
     transform: translate(0%);
     transition: all 0.2s ease-in;
 }
-
 .alerta{
     position: absolute;
     top: 5%;
@@ -264,13 +255,11 @@
         font-size: 1.8rem;
     }
 }
-
 .agregado{
     visibility: visible;
     opacity: 1;
     transform: translateX(0%);
 }
-
 .fondoCarrito{
     position: absolute;
     top: 0;
@@ -283,7 +272,6 @@
     cursor: url(../img/marca-x.png), pointer;
     z-index: 99;
 }
-
 .eliminarPelicula{
     width: 3rem;
     height: 3rem;
@@ -291,17 +279,15 @@
     cursor: pointer;
     visibility: hidden;
 }
-
 .listaCarrito__pelicula:hover .eliminarPelicula{
     visibility: visible;
 }
-
 .grupoBtn{
     width: 100%;
     display:flex;
     justify-content: space-around;
+    margin-bottom: 5rem;
 }
-
 @media (max-width:1200px) {
     .pelicula{
         grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
@@ -339,18 +325,15 @@
         font-size:1.6rem;
         padding: 0.5rem 1rem;
     }
-
     .eliminarPelicula{
         visibility: visible;
     }
 }
-
 @media (max-width: 720px) {
     .listaCarrito{
         width: 100%;
     }
 }
-
 @media (max-width: 440px) {
     #buscarPelicula{
         label{

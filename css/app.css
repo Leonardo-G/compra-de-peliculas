@@ -484,6 +484,7 @@ img {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 5rem;
 }
 
 @media (max-width: 1200px) {
@@ -564,13 +565,13 @@ img {
 }
 #pago {
   position: absolute;
-  top: 50%;
+  padding: 2rem 0;
+  margin: 5rem 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   background-color: #fff;
   width: 70rem;
   max-width: 95%;
-  height: 50rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
@@ -597,6 +598,7 @@ img {
 #pago .form_tarjeta input {
   padding: 1rem 0.5rem;
   margin: 1rem 0;
+  border: 1px solid #A49A87;
 }
 
 .listaCarrito__pelicula {
@@ -646,7 +648,6 @@ img {
 .completarCompra h2 {
   text-align: center;
   color: #A49A87;
-  height: 5rem;
 }
 
 .position-center {
@@ -1089,4 +1090,32 @@ footer p, footer h3 {
     flex-basis: 30%;
     width: 100%;
   }
+}
+#formSubscribirse, .tituloSubscripto {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(50rem, 85%);
+  display: flex;
+  flex-direction: column;
+  background-color: #774e4e75;
+  padding: 2rem;
+  row-gap: 2rem;
+}
+
+legend {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+input {
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  border: #fff;
+}
+
+#formSubscribirse input[type=submit]:hover {
+  background-color: #f0e7e7ea;
+  cursor: pointer;
 }

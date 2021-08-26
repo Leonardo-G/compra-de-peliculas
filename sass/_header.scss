@@ -23,7 +23,6 @@
         display: none;
     }
 }
-
 .presentacion{
     position: absolute;
     left: 5%;
@@ -37,7 +36,6 @@
         color: #FF974F;
     }
 }
-
 .sombraTop{
     position: absolute;
     top: 0;
@@ -47,7 +45,6 @@
     background-image: linear-gradient(to top, transparent 30%,rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 1) 90%);
     z-index: 1;
 }
-
 .sombreado{
     position: absolute;
     top: 0;
@@ -56,7 +53,6 @@
     height: 100%;
     background-image: linear-gradient(to bottom, transparent 85%,rgba(0, 0, 0, 0.5) 90%, rgba(0, 0, 0, 1) 100%);
 }
-
 .sonido{
     position: absolute;
     bottom: 15%;
@@ -72,7 +68,6 @@
         color: #fff;
     }
 }
-
 @media (max-width: 720px) {
     .navegacion{
         .navegacion__enlaces{
@@ -116,7 +111,6 @@
         position: fixed;
     }
 }
-
 @media (max-width: 480px) {
     .presentacion{
         .titulo{
@@ -127,7 +121,6 @@
         }
     }
 }
-
 .scrollBody{
     overflow-y: hidden;
 }

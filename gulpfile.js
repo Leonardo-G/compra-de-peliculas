@@ -1,5 +1,6 @@
 const { series, src, dest, watch } = require('gulp');
-var sass = require('gulp-sass')(require('sass'));
+const gulpWebp = require('gulp-webp');
+const sass = require('gulp-sass')(require('sass'));
 
 function buildStyles() {
   return src('./sass/*.scss')
@@ -8,8 +9,9 @@ function buildStyles() {
 };
 
 function watchArchivo(){
-    watch('./sass/*.scss', buildStyles)
+    watch('./sass/*.scss', buildStyles);
 }
+
 
 exports.buildStyles = buildStyles;
 exports.watchArchivo = watchArchivo;

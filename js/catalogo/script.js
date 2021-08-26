@@ -52,18 +52,18 @@ let objBusqueda = {
     year: ""
 }
 
-
+//Llamamos la informacion que contiene el JSON.
 function cargandoJSON(){
-    const url = "js/peliculas.json";
+    const url = "js/catalogo/peliculas.json";
 
     fetch(url)
         .then(respuesta => respuesta.json())
         .then(resultado => {
             //Imprimimos las peliculas al cargar el documento
             if(subscripto == "true"){
-                imprimirHTMLSubscripto(resultado);
+                imprimirHTMLSubscripto(resultado); // Imprimimos si el usuario esta subscripto
             }else{
-                imprimirHTML(resultado);
+                imprimirHTML(resultado); //Imprimims el catalogo con sus precios
             }
 
             //Imprimimos las peliculas segun el genero que selecciona el usuario
@@ -230,16 +230,17 @@ function agregarCarrito(e){
     const infoPelicula = e.target.parentElement.parentElement.parentElement;
     const objPelicula = creandoObjetoPelicula(infoPelicula);
 
+    //En caso de que la pelicula no este en el carrito, se lo agrega
     if(contadorPelicula(carrito, objPelicula.id) < 1){
         notificacion("Pelicula agregado correctamente", "agregado");
         carrito.push(objPelicula);
         console.log(carrito)
     }else{
-        notificacion("Ya agregaste esta pelicula al carrito", "error");
+        notificacion("Ya agregaste esta pelicula al carrito", "error"); // No se puede agregar mas de una vez, sino una notificacin
         return;
     }
 
-    //En caso de que el arreglo tenga mas de un elemento, aparece el icono del carrito
+    //En caso de que el arreglo se agregue el primer elemento, aparece el icono del carrito
     if(carrito.length > 0){
         iconoKart.style.cssText = "opacity: 1; visibility: visible; cursor: pointer";
         number.textContent = carrito.length;
@@ -318,6 +319,7 @@ function listaCarrito(){
     //Limpiar las listas repetidas antes de imprimir de nuevo
     limpiarHTML(lista);
 
+    //Cada elemento que se agrega al carrito, lo imprimos en la lista
     carrito.forEach(pelicula => {
         const li = document.createElement("li");
         li.classList.add("listaCarrito__pelicula");
@@ -366,8 +368,6 @@ function precioTotal(){
     precioCarrito.textContent = gastado;
 }
 
-
-
 //PAGAR
 function pagar(e){
     // recuperando la informacion de cuanto hay que pagar
@@ -397,6 +397,7 @@ function agregarLocalStorage(){
     localStorage.setItem('carrito', arregloString);
 }
 
+//Recibimos los datos del localStorage
 function recibirLocalStorage(){
     carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 

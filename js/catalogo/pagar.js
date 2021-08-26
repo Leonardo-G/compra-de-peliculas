@@ -11,13 +11,14 @@ let carrito;
 
 document.addEventListener("DOMContentLoaded", () => {
      recibirPelicula()
-
 })
+
 
 function recibirPelicula(){
     let carrito = JSON.parse(localStorage.getItem('carrito'));
-    console.log(carrito)
+
     imprimirPeliculas(carrito)
+    
     let gastado = carrito.reduce((total, gasto) =>{
         return total + (Number(gasto.precio) * 0.21) + Number(gasto.precio);
     }, 0);

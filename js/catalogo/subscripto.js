@@ -1,6 +1,7 @@
 //Agregamos el HTML
 import { catalogoSeccion } from "./variables.js";
                 
+//Imprimimos este HTML, en caso de que el usuario se haya subscripto
 export function imprimirHTMLSubscripto(peliculas){
 
     peliculas.forEach(pelicula => {
@@ -34,7 +35,7 @@ export function imprimirHTMLSubscripto(peliculas){
     agregarBotonPelicula()
 }
 
-//Agregamos el boton para cada pelicula
+//Agregamos el boton para cada pelicula para ver la pelicula
 function agregarBotonPelicula(){
     const btnVerPelicula = document.querySelectorAll(".btn--verPelicula");
     btnVerPelicula.forEach(btnPelicula => {
@@ -42,6 +43,7 @@ function agregarBotonPelicula(){
     })
 };
 
+//Creamos una ventana al querer ver la pelicula
 function verPelicula(e){
     e.preventDefault();
     const divCine = document.querySelector("#verPeliculaSubscripto");
