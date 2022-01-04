@@ -234,7 +234,6 @@ function agregarCarrito(e){
     if(contadorPelicula(carrito, objPelicula.id) < 1){
         notificacion("Pelicula agregado correctamente", "agregado");
         carrito.push(objPelicula);
-        console.log(carrito)
     }else{
         notificacion("Ya agregaste esta pelicula al carrito", "error"); // No se puede agregar mas de una vez, sino una notificacin
         return;
